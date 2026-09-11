@@ -1,0 +1,35 @@
+{{- $p := . -}}
+{{- $years := "" -}}
+{{- if eq $p.Params.status "ongoing" -}}
+  {{- $years = printf "%v–ongoing" $p.Params.year_start -}}
+{{- else if and $p.Params.year_start $p.Params.year_end -}}
+  {{- if eq (printf "%v" $p.Params.year_start) (printf "%v" $p.Params.year_end) -}}
+    {{- $years = printf "%v" $p.Params.year_start -}}
+  {{- else -}}
+    {{- $years = printf "%v–%v" $p.Params.year_start $p.Params.year_end -}}
+  {{- end -}}
+{{- else if $p.Params.year_start -}}
+  {{- $years = printf "%v" $p.Params.year_start -}}
+{{- end -}}
+<article class="project-card" data-project-card>
+  <a class="card-media" href="{{ $p.RelPermalink }}">
+    {{- with $p.Params.cover -}}
+    <img src="{{ . | relURL }}" alt="" loading="lazy" width="800" height="500">
+    {{- else -}}
+    <img src="{{ "images/covers/placeholder.svg" | relURL }}" alt="" loading="lazy" width="800" height="500">
+    {{- end -}}
+  </a>
+  <div class="card-body">
+    <div class="card-meta">
+      {{- with $years -}}<span class="card-years">{{ . }}</span>{{- end -}}
+      {{- if eq $p.Params.status "ongoing" -}}<span class="badge">Ongoing</span>{{- end -}}
+    </div>
+    <h2 class="card-title"><a href="{{ $p.RelPermalink }}">{{ $p.Title }}</a></h2>
+    <p class="card-summary">{{ $p.Params.summary }}</p>
+    {{- with $p.Params.technologies -}}
+    <ul class="tech-list" aria-label="Technologies">
+      {{- range . -}}<li>{{ . }}</li>{{- end -}}
+    </ul>
+    {{- end -}}
+  </div>
+</article>

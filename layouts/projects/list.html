@@ -1,0 +1,21 @@
+{{ define "main" }}
+<section class="wrap">
+  <header class="page-header">
+    <h1>Projects</h1>
+    <p class="section-sub">All hobby projects.</p>
+  </header>
+  {{- $projects := sort .Pages "Params.weight" "asc" -}}
+  <div class="project-grid" id="project-grid" data-page-size="8">
+    {{- range $projects -}}
+      {{- partial "project-card.html" . -}}
+    {{- end -}}
+  </div>
+  <div class="load-more-wrap">
+    <button type="button" class="btn load-more" id="load-more" hidden>Load more</button>
+  </div>
+</section>
+{{ end }}
+
+{{ define "scripts" }}
+<script src="{{ "js/load-more.js" | relURL }}" defer></script>
+{{ end }}

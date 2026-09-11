@@ -1,0 +1,28 @@
+baseURL = 'https://leihwelt.com/'
+locale = 'en-US'
+title = 'Leihwelt'
+enableRobotsTXT = true
+
+[params]
+  author = 'Marcus Körner'
+  tagline = 'Hobby games & projects — nights and weekends'
+  description = 'Personal portfolio of hobby games and side projects by Marcus Körner (atla). Building games since 2000.'
+  github = 'https://github.com/atla'
+  github_talesmud = 'https://github.com/TalesMUD'
+  x = 'https://x.com/atla_'
+  x_handle = '@atla_'
+  veilspan = 'https://veilspan.com'
+  cozytown = 'https://mycozy.town'
+
+[taxonomies]
+  technology = 'technologies'
+
+[markup.goldmark.renderer]
+  unsafe = true
+
+[outputs]
+  home = ['HTML', 'RSS']
+  section = ['HTML']
+
+[pagination]
+  pagerSize = 100
