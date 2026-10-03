@@ -1,5 +1,9 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500">
-  <rect width="800" height="500" fill="#2d6a4f"/>
-  <rect x="24" y="24" width="752" height="452" fill="none" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
-  <text x="40" y="450" font-family="system-ui,sans-serif" font-size="36" font-weight="600" fill="rgba(255,255,255,0.92)">Veilspan</text>
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Veilspan">
+  <rect width="800" height="500" fill="#1c3a34"/>
+  <path d="M0 340 C140 280 220 390 400 330 C560 278 660 360 800 300 V500 H0 Z" fill="#14302b"/>
+  <path d="M0 390 C180 350 260 430 420 390 C600 346 680 420 800 370 V500 H0 Z" fill="#0e2420"/>
+  <path d="M250 500 V210 C250 120 330 70 400 70 C470 70 550 120 550 210 V500" fill="none" stroke="#d7efe4" stroke-width="10"/>
+  <path d="M280 500 V230 C280 160 340 120 400 120 C460 120 520 160 520 230 V500" fill="#24584c"/>
+  <circle cx="400" cy="168" r="18" fill="#e7fff4"/>
+  <text x="48" y="78" font-family="system-ui,sans-serif" font-size="28" font-weight="650" fill="#e7fff4" letter-spacing="0.08em">VEILSPAN</text>
 </svg>

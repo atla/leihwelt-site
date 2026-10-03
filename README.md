@@ -1,72 +1,32 @@
 # Leihwelt
 
-Personal hobby-project portfolio for **Marcus Körner** (`atla`).
+Studio site for **Marcus Körner** (`@atla_`) — [leihwelt.com](https://leihwelt.com).
 
-- **Live:** https://leihwelt.com / https://leihwelt.de (HTTP until DNS/TLS settle)
-- **Stack:** [Hugo](https://gohugo.io/) static site, markdown content, custom clean light/dark layout
-- **Not** the CozyTown arcade (`mycozy.town`) — this site only catalogues projects
+Three games up front: **Veilspan**, **Pirates Bay Palooza**, **Neon Velocity**. Older hobby experiments stay in a quieter list. This is not the CozyTown arcade (`mycozy.town`).
 
-## Local develop
+- **Stack:** [Hugo](https://gohugo.io/) static site
+- **Source:** https://github.com/atla/leihwelt
+
+## Local
 
 ```bash
 hugo server -D
 ```
 
-Build:
+Production build:
 
 ```bash
 hugo --minify
 ```
 
-## Add a project
+Output is `public/`.
 
-1. Copy the archetype or create a new file under `content/projects/`:
+## Deploy
 
-```bash
-hugo new content content/projects/my-game.md
-```
+Preferred: Netlify from this repo (`netlify.toml` is already set, Hugo 0.167.0).
 
-2. Fill frontmatter (required shape):
+Fallback: GitHub Pages from the `gh-pages` branch (contents of `public/`) or from `main` / `docs` if you switch the source. `static/CNAME` publishes `leihwelt.com`.
 
-```yaml
----
-title: "My Game"
-summary: "One-line pitch."
-technologies:
-  - Go
-  - Svelte
-year_start: 2024
-year_end: null          # or a year like 2025
-status: ongoing         # use "ongoing" OR set year_end; leave status empty if finished
-cover: "/images/covers/my-game.svg"   # optional
-github: "https://github.com/atla/..."
-live: "https://..."
-store: ""
-weight: 55              # lower = earlier on the home grid
-draft: false
----
-```
+The CozyTown VPS (`/var/www/leihwelt/`, `46.224.28.163`) is only a fallback if Pages and Netlify are both unavailable. Do not change mycozy.town nginx.
 
-3. Write the body in markdown. Optional cover art: drop an image in `static/images/covers/` and point `cover` at it.
-
-4. Commit with `[grokbot]` in the message when bots push; humans can use normal messages.
-
-## Deploy (CozyTown)
-
-Source of truth on the server: `/home/atla/apps/leihwelt/`
-
-```bash
-cd /home/atla/apps/leihwelt
-git pull
-hugo --minify
-# backup then publish
-sudo mkdir -p /var/www/leihwelt.bak
-sudo rsync -a --delete /var/www/leihwelt/ /var/www/leihwelt.bak/$(date +%Y%m%d-%H%M%S)/
-sudo rsync -a --delete public/ /var/www/leihwelt/
-```
-
-Nginx conf: `/etc/nginx/conf.d/leihwelt.conf` — do **not** touch arcade / mycozy.town configs.
-
-## Theme
-
-System preference + header toggle (`system` → `light` → `dark`). Preference stored in `localStorage` key `leihwelt-theme`.
+Commit messages from bots include `[grokbot]`.

@@ -1,14 +1,15 @@
 baseURL = 'https://leihwelt.com/'
+relativeURLs = true
 locale = 'en-US'
 title = 'Leihwelt'
 enableRobotsTXT = true
 
 [params]
   author = 'Marcus Körner'
-  tagline = 'Hobby games & projects — nights and weekends'
-  description = 'Personal portfolio of hobby games and side projects by Marcus Körner (atla). Building games since 2000.'
+  tagline = 'Indie game studio'
+  description = 'Leihwelt is the indie game studio of Marcus Körner (atla), based in Germany. Home of Veilspan, Pirates Bay Palooza, and Neon Velocity.'
   github = 'https://github.com/atla'
-  github_talesmud = 'https://github.com/TalesMUD'
+  github_talesmud = 'https://github.com/TalesMUD/talesmud'
   x = 'https://x.com/atla_'
   x_handle = '@atla_'
   veilspan = 'https://veilspan.com'

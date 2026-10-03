@@ -14,7 +14,7 @@
 {{- end -}}
 <article class="project-detail wrap">
   <nav class="crumb" aria-label="Breadcrumb">
-    <a href="{{ "/" | relURL }}">Projects</a>
+    <a href="{{ "/" | relURL }}">Games</a>
     <span aria-hidden="true">/</span>
     <span>{{ $p.Title }}</span>
   </nav>
@@ -32,8 +32,8 @@
     </ul>
     {{- end -}}
     <p class="detail-links">
-      {{- with $p.Params.live -}}<a class="btn btn-primary" href="{{ . }}" rel="noopener noreferrer" target="_blank">Play / Live</a>{{- end -}}
-      {{- with $p.Params.github -}}<a class="btn" href="{{ . }}" rel="noopener noreferrer" target="_blank">GitHub</a>{{- end -}}
+      {{- with $p.Params.live -}}<a class="btn btn-primary" href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $p.Params.live_label | default "Play" }}</a>{{- end -}}
+      {{- with $p.Params.github -}}<a class="btn" href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $p.Params.github_label | default "GitHub" }}</a>{{- end -}}
       {{- with $p.Params.store -}}<a class="btn" href="{{ . }}" rel="noopener noreferrer" target="_blank">Store</a>{{- end -}}
     </p>
   </header>

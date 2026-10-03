@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Pirates Bay Palooza">
+  <rect width="800" height="500" fill="#1e3a5f"/>
+  <path d="M0 300 C160 260 240 340 400 300 C560 260 660 330 800 290 V500 H0 Z" fill="#c4a574"/>
+  <path d="M0 360 C180 330 300 400 480 360 C640 328 720 380 800 350 V500 H0 Z" fill="#dfc49a"/>
+  <path d="M470 300 V150" stroke="#f5e6c8" stroke-width="8"/>
+  <path d="M478 158 L620 230 L478 250 Z" fill="#f4f1ea"/>
+  <circle cx="250" cy="120" r="36" fill="#f6e27a"/>
+  <text x="48" y="78" font-family="system-ui,sans-serif" font-size="28" font-weight="650" fill="#f8fafc" letter-spacing="0.06em">PIRATES BAY PALOOZA</text>
+</svg>

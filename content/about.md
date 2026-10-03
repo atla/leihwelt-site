@@ -1,17 +1,20 @@
 ---
 title: About
-summary: Marcus Körner — games since 2000, engineering manager by day.
+summary: Marcus Körner — Germany-based indie, making games since about 2000.
 ---
 
-I'm **Marcus Körner** (online: **atla**). I've been building games since I was 16 — roughly since **2000**, about **26 years** of hobby gamedev and side projects.
+I'm **Marcus Körner**. Online I'm **atla**. **Leihwelt** is the name on the games I make: a one-person indie studio based in Germany.
 
-By day I'm a software engineering manager. By night (and weekends) I ship MUDs, arcade toys, and small experiments — many of them Android titles earlier on, later web and multiplayer.
+I've been building games since I was 16, around **2000**. By day I work as a software engineering manager. Nights and weekends are for shipping worlds, shops, and arcade races.
 
-## Links
+## Now
 
-- GitHub: [atla](https://github.com/atla) · [TalesMUD](https://github.com/TalesMUD)
-- Live MUD: [veilspan.com](https://veilspan.com)
-- Arcade: [mycozy.town](https://mycozy.town) (optional stop — separate from this portfolio)
-- X: [@atla_](https://x.com/atla_)
+- **[Veilspan](https://veilspan.com)** — a browser MUD, and the live world for the open-source [TalesMUD](https://github.com/TalesMUD/talesmud) framework.
+- **Pirates Bay Palooza** — a 2D pixel-art pirate shopkeeping game in Unity. Public [playtest builds](https://github.com/atla/PiratesBayPalooza-Playtests) for Windows and Android.
+- **[Neon Velocity](https://neonvelocity.mycozy.town/)** — a neon arcade racer in the browser. A Unity port for Xbox Series X is in progress.
 
-This site (**Leihwelt**) is the quiet catalogue of those hobby projects — not the arcade itself.
+[mycozy.town](https://mycozy.town) is a separate arcade cabinet of smaller toys. This site is the studio, not that cabinet.
+
+## Contact
+
+The public place to reach me is [X @atla_](https://x.com/atla_). Code lives on [GitHub](https://github.com/atla).
