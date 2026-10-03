@@ -10,7 +10,7 @@ year_end: null
 status: ongoing
 featured: true
 draft: false
-cover: "/images/covers/pirates-bay-palooza.svg"
+cover: "/images/games/pirates-bay-palooza.webp"
 github: "https://github.com/atla/PiratesBayPalooza-Playtests"
 github_label: "Playtest builds"
 live: ""

@@ -12,7 +12,7 @@ year_end: null
 status: ongoing
 featured: true
 draft: false
-cover: "/images/covers/veilspan.svg"
+cover: "/images/games/veilspan.webp"
 github: "https://github.com/TalesMUD/talesmud"
 github_label: "TalesMUD source"
 live: "https://veilspan.com"

@@ -10,7 +10,7 @@ year_end: null
 status: ongoing
 featured: true
 draft: false
-cover: "/images/covers/neon-velocity.svg"
+cover: "/images/games/neon-velocity.webp"
 github: ""
 live: "https://neonvelocity.mycozy.town/"
 live_label: "Play in the browser"
