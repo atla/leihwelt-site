@@ -9,6 +9,8 @@ year_start: 2025
 year_end: null
 status: ongoing
 featured: true
+platforms:
+  - Browser
 draft: false
 cover: "/images/games/neon-velocity.webp"
 github: ""

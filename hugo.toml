@@ -7,7 +7,7 @@ enableRobotsTXT = true
 [params]
   author = 'Marcus Körner'
   tagline = 'Indie game studio'
-  description = 'Leihwelt is the indie game studio of Marcus Körner (atla), based in Germany. Home of Veilspan, Pirates Bay Palooza, and Neon Velocity.'
+  description = 'Leihwelt is the one-person indie studio of Marcus Körner (@atla_), based in Germany. Veilspan, Pirates Bay Palooza, and Neon Velocity.'
   github = 'https://github.com/atla'
   github_talesmud = 'https://github.com/TalesMUD/talesmud'
   x = 'https://x.com/atla_'

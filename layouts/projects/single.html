@@ -1,17 +1,5 @@
 {{ define "main" }}
 {{- $p := . -}}
-{{- $years := "" -}}
-{{- if eq $p.Params.status "ongoing" -}}
-  {{- $years = printf "%v–ongoing" $p.Params.year_start -}}
-{{- else if and $p.Params.year_start $p.Params.year_end -}}
-  {{- if eq (printf "%v" $p.Params.year_start) (printf "%v" $p.Params.year_end) -}}
-    {{- $years = printf "%v" $p.Params.year_start -}}
-  {{- else -}}
-    {{- $years = printf "%v–%v" $p.Params.year_start $p.Params.year_end -}}
-  {{- end -}}
-{{- else if $p.Params.year_start -}}
-  {{- $years = printf "%v" $p.Params.year_start -}}
-{{- end -}}
 <article class="project-detail wrap">
   <nav class="crumb" aria-label="Breadcrumb">
     <a href="{{ "/" | relURL }}">Games</a>
@@ -21,20 +9,18 @@
 
   <header class="detail-header">
     <div class="detail-meta">
-      {{- with $years -}}<span class="card-years">{{ . }}</span>{{- end -}}
-      {{- if eq $p.Params.status "ongoing" -}}<span class="badge">Ongoing</span>{{- end -}}
+      {{- partial "meta-line.html" $p -}}
+      {{- if eq $p.Params.status "ongoing" -}}<span class="pill pill-inline">In progress</span>{{- end -}}
     </div>
     <h1>{{ $p.Title }}</h1>
     <p class="detail-summary">{{ $p.Params.summary }}</p>
     {{- with $p.Params.technologies -}}
-    <ul class="tech-list" aria-label="Technologies">
-      {{- range . -}}<li>{{ . }}</li>{{- end -}}
-    </ul>
+    <p class="tech-line">{{ delimit . " · " }}</p>
     {{- end -}}
     <p class="detail-links">
       {{- with $p.Params.live -}}<a class="btn btn-primary" href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $p.Params.live_label | default "Play" }}</a>{{- end -}}
-      {{- with $p.Params.github -}}<a class="btn" href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $p.Params.github_label | default "GitHub" }}</a>{{- end -}}
-      {{- with $p.Params.store -}}<a class="btn" href="{{ . }}" rel="noopener noreferrer" target="_blank">Store</a>{{- end -}}
+      {{- with $p.Params.github -}}<a class="text-link" href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $p.Params.github_label | default "GitHub" }}</a>{{- end -}}
+      {{- with $p.Params.store -}}<a class="text-link" href="{{ . }}" rel="noopener noreferrer" target="_blank">Store</a>{{- end -}}
     </p>
   </header>
 

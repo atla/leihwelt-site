@@ -11,6 +11,8 @@ year_start: 2024
 year_end: null
 status: ongoing
 featured: true
+platforms:
+  - Browser
 draft: false
 cover: "/images/games/veilspan.webp"
 github: "https://github.com/TalesMUD/talesmud"

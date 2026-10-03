@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="system">
+<html lang="en">
 <head>
   {{- partial "head.html" . -}}
 </head>
@@ -10,7 +10,6 @@
     {{- block "main" . }}{{ end -}}
   </main>
   {{- partial "footer.html" . -}}
-  <script src="{{ "js/theme.js" | relURL }}" defer></script>
   {{- block "scripts" . }}{{ end -}}
 </body>
 </html>

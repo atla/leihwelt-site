@@ -9,6 +9,9 @@ year_start: 2025
 year_end: null
 status: ongoing
 featured: true
+platforms:
+  - Windows
+  - Android
 draft: false
 cover: "/images/games/pirates-bay-palooza.webp"
 github: "https://github.com/atla/PiratesBayPalooza-Playtests"
