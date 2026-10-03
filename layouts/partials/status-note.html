@@ -1,0 +1,31 @@
+{{- $lead := "" -}}
+{{- with .Params.platforms -}}
+  {{- $lead = delimit . ", " -}}
+{{- end -}}
+{{- $tail := "" -}}
+{{- if eq .Params.status "ongoing" -}}
+  {{- if .Params.year_start -}}
+    {{- $tail = printf "in progress since %v" .Params.year_start -}}
+  {{- else -}}
+    {{- $tail = "in progress" -}}
+  {{- end -}}
+{{- else if and .Params.year_start .Params.year_end -}}
+  {{- if eq (printf "%v" .Params.year_start) (printf "%v" .Params.year_end) -}}
+    {{- $tail = printf "%v" .Params.year_start -}}
+  {{- else -}}
+    {{- $tail = printf "%v to %v" .Params.year_start .Params.year_end -}}
+  {{- end -}}
+{{- else if .Params.year_start -}}
+  {{- $tail = printf "%v" .Params.year_start -}}
+{{- end -}}
+{{- $sentence := "" -}}
+{{- if and $lead $tail -}}
+  {{- $sentence = printf "%s, %s." $lead $tail -}}
+{{- else if $lead -}}
+  {{- $sentence = printf "%s." $lead -}}
+{{- else if $tail -}}
+  {{- $sentence = printf "%s." $tail -}}
+{{- end -}}
+{{- if $sentence -}}
+<p class="note">{{ printf "%s%s" (upper (substr $sentence 0 1)) (substr $sentence 1) }}</p>
+{{- end -}}

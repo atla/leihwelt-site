@@ -1,74 +1,70 @@
 {{ define "main" }}
-<section class="hero wrap" id="top">
-  <hr class="rule">
-  <p class="kicker">Indie game studio · Germany</p>
-  <h1 class="hero-title">Leihwelt</h1>
-  <p class="hero-lead">Games by {{ site.Params.author }}, made on nights and weekends.</p>
-  <div class="hero-actions">
-    <a class="btn btn-primary" href="#games">The games</a>
-    <a class="text-link" href="{{ site.Params.x }}" rel="noopener noreferrer" target="_blank">{{ site.Params.x_handle }}</a>
-  </div>
-</section>
+<div class="wrap">
+  <h1 class="masthead">Leihwelt</h1>
+  <p class="lede">Games by {{ site.Params.author }}, made in Germany.</p>
+</div>
 
-<section class="games wrap" id="games" aria-labelledby="games-heading">
-  <div class="section-head">
-    <h2 id="games-heading">Games</h2>
-    <p class="section-sub">Three titles, still in progress.</p>
+<section class="games" id="games" aria-labelledby="games-heading">
+  <div class="wrap">
+    <h2 id="games-heading" class="section-title">Games</h2>
   </div>
   {{- $featured := where (where site.RegularPages "Section" "projects") "Params.featured" true -}}
   {{- $featured = sort $featured "Params.weight" "asc" -}}
-  <div class="studio-grid">
-    {{- range $featured -}}
-    {{- $game := . -}}
-    <article class="studio-card">
-      <a class="card-media" href="{{ $game.RelPermalink }}">
-        <img src="{{ $game.Params.cover | relURL }}" alt="{{ $game.Title }} gameplay" width="1600" height="1000">
-        {{- if eq $game.Params.status "ongoing" -}}<span class="pill">In progress</span>{{- end -}}
-      </a>
-      <div class="card-body">
-        {{- partial "meta-line.html" $game -}}
-        <h3 class="card-title"><a href="{{ $game.RelPermalink }}">{{ $game.Title }}</a></h3>
-        <p class="card-summary">{{ $game.Params.summary }}</p>
-        <p class="card-actions">
+  {{- range $i, $game := $featured }}
+    {{- if eq $i 0 }}
+  <article class="feature">
+    <a class="feature-shot" href="{{ $game.RelPermalink }}">
+      <img src="{{ $game.Params.cover | relURL }}" width="1600" height="1000" alt="{{ printf "%s screenshot" $game.Title }}">
+    </a>
+    <div class="wrap">
+      <div class="feature-copy">
+        <h3 class="entry-title"><a href="{{ $game.RelPermalink }}">{{ $game.Title }}</a></h3>
+        <p>{{ $game.Params.summary }}</p>
+        <p class="entry-links">
           {{- with $game.Params.live -}}
-            <a class="text-link" href="{{ . }}" rel="noopener noreferrer" target="_blank">Play</a>
+          <a href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $game.Params.live_label | default "Play" }}</a>
           {{- end -}}
           {{- with $game.Params.github -}}
-            <a class="text-link" href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $game.Params.github_label | default "Source" }}</a>
+          <a href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $game.Params.github_label | default "GitHub" }}</a>
           {{- end -}}
         </p>
       </div>
+    </div>
+  </article>
+    {{- else }}
+  <div class="wrap">
+    <article class="entry{{ if eq (mod $i 2) 1 }} entry-flip{{ end }}">
+      <div class="entry-copy">
+        <h3 class="entry-title"><a href="{{ $game.RelPermalink }}">{{ $game.Title }}</a></h3>
+        <p>{{ $game.Params.summary }}</p>
+        <p class="entry-links">
+          {{- with $game.Params.live -}}
+          <a href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $game.Params.live_label | default "Play" }}</a>
+          {{- end -}}
+          {{- with $game.Params.github -}}
+          <a href="{{ . }}" rel="noopener noreferrer" target="_blank">{{ $game.Params.github_label | default "GitHub" }}</a>
+          {{- end -}}
+        </p>
+      </div>
+      <a class="entry-shot" href="{{ $game.RelPermalink }}">
+        <img src="{{ $game.Params.cover | relURL }}" width="1600" height="1000" alt="{{ printf "%s screenshot" $game.Title }}">
+      </a>
     </article>
-    {{- end -}}
   </div>
+    {{- end }}
+  {{- end }}
 </section>
 
-<section class="band" id="about" aria-labelledby="about-heading">
-  <div class="wrap about-grid">
-    <div>
+<div class="wrap">
+  <section class="studio" id="about" aria-labelledby="about-heading">
+    <div class="measure">
       <h2 id="about-heading">About</h2>
-      <p>Marcus Körner (<a href="{{ site.Params.x }}" rel="noopener noreferrer" target="_blank">@atla_</a>) has been making games since about 2000. Leihwelt is the studio name on that work. Day job: software engineering manager. The games happen at night.</p>
+      <p>I’m Marcus Körner. Online I’m <a href="{{ site.Params.x }}" rel="noopener noreferrer" target="_blank">@atla_</a>. I’ve been making games since about 2000. Leihwelt is the studio name on that work. By day I work as a software engineering manager.</p>
       <p><a href="{{ "/about/" | relURL }}">More about Marcus</a></p>
+      <h2 id="contact">Contact</h2>
+      <p>The public place to reach me is <a href="{{ site.Params.x }}" rel="noopener noreferrer" target="_blank">X @atla_</a>. Code and public playtests are on <a href="{{ site.Params.github }}" rel="noopener noreferrer" target="_blank">GitHub</a>.</p>
+      <p class="quiet">Earlier hobby pieces are on the <a href="{{ "/projects/" | relURL }}">projects page</a>. Smaller browser toys live on <a href="{{ site.Params.cozytown }}" rel="noopener noreferrer" target="_blank">mycozy.town</a>, which is a separate arcade, not this studio.</p>
     </div>
-    <div id="contact">
-      <h2>Contact</h2>
-      <p>Public contact is <a href="{{ site.Params.x }}" rel="noopener noreferrer" target="_blank">X @atla_</a>. Source and playtests that are public are on <a href="{{ site.Params.github }}" rel="noopener noreferrer" target="_blank">GitHub</a>.</p>
-      <p class="credit">Built by <a href="{{ site.Params.x }}" rel="noopener noreferrer" target="_blank">@atla_</a>.</p>
-    </div>
-  </div>
-</section>
-
-<section class="projects wrap" aria-labelledby="earlier-heading">
-  <div class="section-head">
-    <h2 id="earlier-heading">Earlier experiments</h2>
-    <p class="section-sub"><a href="{{ "/projects/" | relURL }}">All projects</a></p>
-  </div>
-  {{- $rest := where (where site.RegularPages "Section" "projects") "Params.featured" "!=" true -}}
-  {{- $rest = sort $rest "Params.weight" "asc" -}}
-  <div class="project-grid">
-    {{- range $rest -}}
-      {{- partial "project-card.html" . -}}
-    {{- end -}}
-  </div>
-</section>
+  </section>
+</div>
 {{ end }}

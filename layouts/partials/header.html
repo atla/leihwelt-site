@@ -1,6 +1,8 @@
 <header class="site-header">
   <div class="wrap header-inner">
+    {{- if not .IsHome -}}
     <a class="brand" href="{{ "/" | relURL }}">Leihwelt</a>
+    {{- end -}}
     <nav class="nav" aria-label="Primary">
       <a href="{{ "/#games" | relURL }}">Games</a>
       <a href="{{ "/about/" | relURL }}"{{ if eq .RelPermalink "/about/" }} aria-current="page"{{ end }}>About</a>

@@ -5,6 +5,7 @@ Studio site for **Marcus Körner** (`@atla_`) — [leihwelt.com](https://leihwel
 Three games up front: **Veilspan**, **Pirates Bay Palooza**, **Neon Velocity**. Older hobby experiments stay in a quieter list. This is not the CozyTown arcade (`mycozy.town`).
 
 - **Stack:** [Hugo](https://gohugo.io/) static site
+- **Look:** paper catalog, documented in [DESIGN.md](DESIGN.md)
 - **Source:** https://github.com/atla/leihwelt
 
 ## Local

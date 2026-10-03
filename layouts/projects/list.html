@@ -1,21 +1,28 @@
 {{ define "main" }}
 <section class="wrap page">
-  <header class="page-header">
-    <h1>Projects</h1>
-    <p class="section-sub">The studio lineup, plus earlier hobby pieces.</p>
-  </header>
-  {{- $projects := sort .Pages "Params.weight" "asc" -}}
-  <div class="project-grid" id="project-grid" data-page-size="8">
-    {{- range $projects -}}
-      {{- partial "project-card.html" . -}}
-    {{- end -}}
-  </div>
-  <div class="load-more-wrap">
-    <button type="button" class="btn load-more" id="load-more" hidden>Load more</button>
-  </div>
+  <h1 class="page-title">Projects</h1>
+  <p class="lede">The studio games first, then earlier experiments. Placeholder names are unfinished.</p>
+  {{- $featured := where .Pages "Params.featured" true -}}
+  {{- $featured = sort $featured "Params.weight" "asc" -}}
+  {{- $rest := where .Pages "Params.featured" "!=" true -}}
+  {{- $rest = sort $rest "Params.weight" "asc" -}}
+  <ul class="index-list">
+    {{- range $featured }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <span class="index-title">{{ .Title }}</span>
+        <span class="index-summary">{{ .Params.summary }}</span>
+      </a>
+    </li>
+    {{- end }}
+    {{- range $rest }}
+    <li>
+      <a href="{{ .RelPermalink }}">
+        <span class="index-title">{{ .Title }}</span>
+        <span class="index-summary">{{ .Params.summary }}</span>
+      </a>
+    </li>
+    {{- end }}
+  </ul>
 </section>
-{{ end }}
-
-{{ define "scripts" }}
-<script src="{{ "js/load-more.js" | relURL }}" defer></script>
 {{ end }}
