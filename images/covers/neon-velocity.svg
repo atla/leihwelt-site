@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="500" viewBox="0 0 800 500" role="img" aria-label="Neon Velocity">
+  <rect width="800" height="500" fill="#12141c"/>
+  <path d="M-20 420 L260 80" stroke="#5eead4" stroke-width="14" stroke-linecap="round"/>
+  <path d="M80 460 L360 60" stroke="#fb7185" stroke-width="8" stroke-linecap="round" opacity="0.9"/>
+  <path d="M200 480 L520 40" stroke="#93c5fd" stroke-width="6" stroke-linecap="round" opacity="0.8"/>
+  <path d="M430 250 L690 190 L640 310 Z" fill="#f8fafc"/>
+  <path d="M455 250 L640 214 L610 286 Z" fill="#fb7185"/>
+  <text x="48" y="78" font-family="system-ui,sans-serif" font-size="28" font-weight="650" fill="#f8fafc" letter-spacing="0.08em">NEON VELOCITY</text>
+</svg>
